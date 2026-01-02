@@ -1,23 +1,25 @@
 :root {
-    --plasma-blue: #3daee9;      /* Le bleu Plasma emblématique */
-    --plasma-bg: #eff0f1;        /* Fond clair type Breeze Light */
-    --plasma-card: #ffffff;      /* Fond des cartes */
+    --plasma-blue: #3daee9;      /* Bleu Plasma officiel */
+    --plasma-bg: #eff0f1;        /* Fond clair Breeze */
+    --plasma-card: #ffffff;      /* Fond des fenêtres */
     --plasma-text: #232629;      /* Texte sombre Breeze */
-    --plasma-border: #bcbebf;    /* Bordures fines KDE */
-    --radius: 10px;              /* Arrondis typiques de Plasma */
+    --plasma-border: #bcbebf;    /* Bordures fines */
+    --radius: 12px;              /* Arrondis style KDE */
 }
 
 body {
     margin: 0;
-    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; /* Polices plus modernes */
-    background: linear-gradient(135deg, #e0e2e4 0%, #eff0f1 100%); /* Léger dégradé de fond */
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background: linear-gradient(135deg, #e0e2e4 0%, #eff0f1 100%);
     color: var(--plasma-text);
+    min-height: 100vh;
 }
 
 /* HEADER STYLE PANNEAU PLASMA */
 header {
-    background: rgba(255, 255, 255, 0.85); /* Transparence */
-    backdrop-filter: blur(12px);          /* Effet de flou (Glassmorphism) */
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(12px); /* Effet de flou KDE */
+    -webkit-backdrop-filter: blur(12px);
     padding: 10px 40px;
     border-bottom: 1px solid var(--plasma-border);
     position: sticky;
@@ -34,7 +36,7 @@ nav {
 nav ul {
     list-style: none;
     display: flex;
-    gap: 10px; /* Plus serré comme les menus KDE */
+    gap: 10px;
 }
 
 nav a {
@@ -47,7 +49,7 @@ nav a {
 }
 
 nav a:hover {
-    background: rgba(61, 174, 233, 0.1); /* Hover bleu très léger */
+    background: rgba(61, 174, 233, 0.1);
     color: var(--plasma-blue);
 }
 
@@ -57,9 +59,12 @@ nav a.active {
     box-shadow: 0 4px 10px rgba(61, 174, 233, 0.3);
 }
 
+/* LOGO AVEC ANIMATION DE LUEUR */
 .logo {
     height: 45px;
+    width: auto;
     transition: transform 0.3s ease;
+    animation: logoPulse 2s infinite ease-in-out;
 }
 
 .logo:hover {
@@ -74,7 +79,8 @@ nav a.active {
     padding: 40px;
     border-radius: var(--radius);
     border: 1px solid var(--plasma-border);
-    box-shadow: 0 8px 24px rgba(0,0,0,0.08); /* Ombre douce style KDE */
+    box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+    animation: plasmaFadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 /* BOUTON STYLE "BREEZE" */
@@ -100,15 +106,16 @@ nav a.active {
 footer {
     text-align: center;
     padding: 30px;
-    background: transparent; /* Plus moderne sans bloc massif */
     color: #7f8c8d;
     font-size: 0.9rem;
 }
- /* Animation d'entrée style KDE */
+
+/* ANIMATIONS */
+
 @keyframes plasmaFadeIn {
     from {
         opacity: 0;
-        transform: translateY(20px); /* Part d'un peu plus bas */
+        transform: translateY(30px);
     }
     to {
         opacity: 1;
@@ -116,12 +123,13 @@ footer {
     }
 }
 
-/* On applique l'animation à la section page */
-.page {
-    animation: plasmaFadeIn 0.6s cubic-bezier(0.16, 1, 0.3, 1); /* Animation fluide */
+@keyframes logoPulse {
+    0% { filter: drop-shadow(0 0 0px rgba(61, 174, 233, 0)); }
+    50% { filter: drop-shadow(0 0 12px rgba(61, 174, 233, 0.6)); }
+    100% { filter: drop-shadow(0 0 0px rgba(61, 174, 233, 0)); }
 }
 
-/* Optionnel : petit effet sur les cartes de fonctionnalités si tu en as */
+/* Effet pour les cartes optionnelles */
 .feature {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -130,3 +138,4 @@ footer {
     transform: translateY(-5px);
     box-shadow: 0 10px 20px rgba(0,0,0,0.1);
 }
+ 
