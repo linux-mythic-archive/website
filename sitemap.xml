@@ -1,24 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-
-  <url>
+<url>
     <loc>https://linux-mythic-archive.github.io/website/</loc>
     <priority>1.00</priority>
   </url>
-
-  <url>
+<url>
     <loc>https://linux-mythic-archive.github.io/website/download.html</loc>
     <priority>0.90</priority>
   </url>
-
-  <url>
+<url>
     <loc>https://linux-mythic-archive.github.io/website/roadmap.html</loc>
     <priority>0.80</priority>
   </url>
-
-  <url>
+<url>
     <loc>https://linux-mythic-archive.github.io/website/about.html</loc>
     <priority>0.80</priority>
   </url>
-
 </urlset>
