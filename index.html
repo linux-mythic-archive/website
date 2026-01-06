@@ -8,11 +8,14 @@
 </head>
 <body>
 
-<header>
-    <nav>
-        <img src="logo2.png" alt="Logo MythicOS" class="logo">
+<header class="header">
+    <nav class="navbar">
+        <div class="nav-left">
+            <img src="logo2.png" alt="Logo MythicOS" class="logo">
+            <span class="brand">MythicOS</span>
+        </div>
 
-        <ul>
+        <ul class="nav-links">
             <li><a class="active" href="index.html">Accueil</a></li>
             <li><a href="download.html">Téléchargement</a></li>
             <li><a href="roadmap.html">Roadmap</a></li>
@@ -21,30 +24,32 @@
     </nav>
 </header>
 
-<section class="hero">
-    <h1>MythicOS</h1>
-    <p>Une distribution Linux moderne, rapide et élégante, pensée pour la simplicité et la performance.</p>
-    <a class="btn" href="download.html">Télécharger MythicOS</a>
+<section class="hero mint-hero">
+    <div class="hero-content">
+        <h1>MythicOS</h1>
+        <p>Une distribution Linux moderne, rapide et élégante, pensée pour la simplicité et la performance.</p>
+        <a class="btn primary-btn" href="download.html">Télécharger MythicOS</a>
+    </div>
 </section>
 
-<section class="features">
-    <div class="feature">
+<section class="features mint-features">
+    <div class="feature-card">
         <h3>⚡ Rapide</h3>
         <p>Optimisé pour offrir une expérience fluide, même sur du matériel modeste.</p>
     </div>
 
-    <div class="feature">
+    <div class="feature-card">
         <h3>🎨 Élégant</h3>
         <p>Une interface cohérente, moderne et agréable, conçue pour rester simple et efficace.</p>
     </div>
 
-    <div class="feature">
+    <div class="feature-card">
         <h3>🔒 Sécurisé</h3>
         <p>Mises à jour régulières, dépôt APT signé et sécurité renforcée dès l’installation.</p>
     </div>
 </section>
 
-<section class="intro">
+<section class="intro mint-intro">
     <h2>Pourquoi MythicOS ?</h2>
     <p>
         MythicOS est une distribution Linux légère et modulaire, conçue pour offrir une expérience 
@@ -53,7 +58,7 @@
     </p>
 </section>
 
-<footer>
+<footer class="footer">
     <p>© 2026 MythicOS – Projet communautaire open‑source</p>
 </footer>
 
