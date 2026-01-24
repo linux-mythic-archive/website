@@ -16,31 +16,35 @@
 
         <ul class="nav-links">
             <li><a class="active" href="index">Accueil</a></li>
-         <li class="dropdown">
-    <a class="active dropdown-btn">Téléchargement ▾</a>
-    <ul class="dropdown-menu">
-        <li><a href="download">Toutes les éditions</a></li>
-        <li><a href="edition-cinnade">MythicOS Cinnade</a></li>
-        <li><a href="edition-xfce">MythicOS XFCE</a></li>
-    </ul>
-</li>
+
+            <li class="dropdown">
+                <a class="active dropdown-btn">Téléchargement ▾</a>
+                <ul class="dropdown-menu">
+                    <li><a href="download">Toutes les éditions</a></li>
+                    <li><a href="edition-cinnade">MythicOS Cinnade</a></li>
+                    <li><a href="edition-xfce">MythicOS XFCE</a></li>
+                </ul>
+            </li>
 
             <li><a href="roadmap">Roadmap</a></li>
             <li><a href="about">À propos</a></li>
-              <li><a href="https://informatique.hastag.fr">Retour à l'acueil informatique</a></li>
+            <li><a href="https://informatique.hastag.fr">Retour à l'acueil informatique</a></li>
+
             <button id="theme-toggle" class="theme-btn">🌙</button>
         </ul>
     </nav>
 </header>
 
+<!-- HERO -->
 <section class="hero mint-hero">
     <div class="hero-content">
         <h1>MythicOS</h1>
         <p>Une distribution Linux moderne, rapide et élégante, pensée pour la simplicité et la performance.</p>
-        <a class="btn primary-btn" href="download.html">Télécharger MythicOS</a>
+        <a class="btn primary-btn" href="download">Télécharger MythicOS</a>
     </div>
 </section>
 
+<!-- FEATURES -->
 <section class="features mint-features">
     <div class="feature-card">
         <h3>⚡ Rapide</h3>
@@ -58,13 +62,107 @@
     </div>
 </section>
 
+<!-- INTRO -->
 <section class="intro mint-intro">
     <h2>Pourquoi MythicOS ?</h2>
     <p>
-        MythicOS est une distribution Linux légère et modulaire, conçue pour offrir une expérience 
-        stable, propre et accessible. Que vous soyez débutant ou utilisateur avancé, MythicOS vous 
+        MythicOS est une distribution Linux légère et modulaire, conçue pour offrir une expérience
+        stable, propre et accessible. Que vous soyez débutant ou utilisateur avancé, MythicOS vous
         accompagne avec une base fiable et un environnement soigné.
     </p>
+</section>
+
+<!-- EDITIONS -->
+<section class="editions mint-editions">
+    <h2>Choisissez votre édition</h2>
+    <p>MythicOS est disponible en plusieurs éditions adaptées à vos besoins.</p>
+
+    <div class="edition-grid">
+        <div class="edition-card">
+            <img src="assets/img/cinnade.png" alt="MythicOS Cinnade">
+            <h3>MythicOS Cinnade</h3>
+            <p>Une expérience moderne, élégante et intuitive basée sur Cinnamon.</p>
+            <a class="btn secondary-btn" href="edition-cinnade">Découvrir</a>
+        </div>
+
+        <div class="edition-card">
+            <img src="assets/img/xfce.png" alt="MythicOS XFCE">
+            <h3>MythicOS XFCE</h3>
+            <p>Légère, rapide et stable. Parfaite pour les ordinateurs plus anciens.</p>
+            <a class="btn secondary-btn" href="edition-xfce">Découvrir</a>
+        </div>
+    </div>
+</section>
+
+<!-- HIGHLIGHTS -->
+<section class="highlights mint-highlights">
+    <h2>Ce que MythicOS vous apporte</h2>
+
+    <div class="highlight-grid">
+        <div class="highlight-card">
+            <h3>🧩 Simplicité</h3>
+            <p>Une interface claire, pensée pour être immédiatement utilisable.</p>
+        </div>
+
+        <div class="highlight-card">
+            <h3>🛠️ Personnalisable</h3>
+            <p>Adaptez votre environnement à vos besoins grâce à des outils simples.</p>
+        </div>
+
+        <div class="highlight-card">
+            <h3>🔄 Stable</h3>
+            <p>Basée sur une base solide et éprouvée, MythicOS garantit une expérience fiable.</p>
+        </div>
+
+        <div class="highlight-card">
+            <h3>🧪 Reproductible</h3>
+            <p>Chaque build est contrôlé, documenté et reproductible pour une transparence totale.</p>
+        </div>
+    </div>
+</section>
+
+<!-- SCREENSHOTS -->
+<section class="screenshots mint-screenshots">
+    <h2>Captures d’écran</h2>
+    <p>Découvrez l’apparence de MythicOS.</p>
+
+    <div class="screenshot-grid">
+        <img src="assets/img/screen1.png" alt="Capture 1">
+        <img src="assets/img/screen2.png" alt="Capture 2">
+        <img src="assets/img/screen3.png" alt="Capture 3">
+    </div>
+</section>
+
+<!-- COMMUNITY -->
+<section class="community mint-community">
+    <h2>Communauté & Support</h2>
+    <p>MythicOS est un projet communautaire. Rejoignez-nous pour contribuer, aider ou simplement échanger.</p>
+
+    <div class="community-links">
+        <a class="btn secondary-btn" href="https://github.com">GitHub</a>
+        <a class="btn secondary-btn" href="forum">Forum</a>
+        <a class="btn secondary-btn" href="documentation">Documentation</a>
+    </div>
+</section>
+
+<!-- NEWS -->
+<section class="news mint-news">
+    <h2>Actualités du projet</h2>
+    <p>Les dernières annonces, mises à jour et informations importantes.</p>
+
+    <div class="news-list">
+        <article class="news-item">
+            <h3>MythicOS 1.0 – Préparation du lancement</h3>
+            <p>Les dernières optimisations sont en cours avant la sortie officielle.</p>
+            <a href="blog-post-1">Lire plus</a>
+        </article>
+
+        <article class="news-item">
+            <h3>Nouvelle édition XFCE</h3>
+            <p>Une version légère et rapide, idéale pour les machines plus anciennes.</p>
+            <a href="blog-post-2">Lire plus</a>
+        </article>
+    </div>
 </section>
 
 <footer class="footer">
@@ -76,7 +174,6 @@
     const toggleBtn = document.getElementById("theme-toggle");
     const body = document.body;
 
-    // Charger le thème sauvegardé
     if (localStorage.getItem("theme") === "dark") {
         body.classList.add("dark");
         toggleBtn.textContent = "☀️";
@@ -97,10 +194,3 @@
 
 </body>
 </html>
-
-
-
-
-
-
-
