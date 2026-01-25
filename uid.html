@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Guide : Rebranding du menu Cinnamon vers Cinnade</title>
+
+<link rel="icon" type="image/png" href="favicon2.png">
+
+<style>
+    :root {
+        --bg: #f5f7f5;
+        --card: #ffffff;
+        --text: #2e3436;
+        --accent: #87c095;
+        --accent-dark: #6aa87a;
+        --border: #d8ddd8;
+        --radius: 10px;
+    }
+
+    body {
+        font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+        background: var(--bg);
+        padding: 20px;
+        line-height: 1.6;
+        color: var(--text);
+    }
+
+    h1, h2 {
+        color: var(--accent-dark);
+    }
+
+    h1 {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .box {
+        background: var(--card);
+        padding: 20px;
+        border-radius: var(--radius);
+        margin-bottom: 25px;
+        border-left: 6px solid var(--accent);
+        box-shadow: 0 6px 18px rgba(0,0,0,0.05);
+    }
+
+    pre {
+        background: #eee;
+        padding: 12px;
+        border-radius: var(--radius);
+        overflow-x: auto;
+        border: 1px solid var(--border);
+    }
+
+    /* Dark mode */
+    body.dark {
+        background: #1e1f1e;
+        color: #e6e6e6;
+    }
+
+    body.dark .box {
+        background: #2a2c2a;
+        border-color: var(--accent-dark);
+        box-shadow: 0 6px 18px rgba(0,0,0,0.4);
+    }
+
+    body.dark pre {
+        background: #333;
+        border-color: #444;
+    }
+
+    #theme-toggle {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background: var(--accent);
+        border: none;
+        padding: 10px 14px;
+        border-radius: var(--radius);
+        cursor: pointer;
+        font-size: 1.2rem;
+        color: white;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+
+    #theme-toggle:hover {
+        background: var(--accent-dark);
+    }
+</style>
+</head>
+
+<body>
+
+<button id="theme-toggle">🌙</button>
+
+<h1>Guide : Rebranding du menu Cinnamon vers Cinnade</h1>
+
+<p>
+Ce guide explique comment renommer proprement l’applet du menu Cinnamon
+(<strong>menu@cinnamon.org</strong>) pour en faire l’applet officiel de
+<strong>MythicOS Cinnade</strong> : <strong>menu@cinnade.org</strong>.
+</p>
+
+<div class="box">
+<h2>1. Pourquoi changer l’UUID ?</h2>
+<p>
+Cinnamon (et donc Cinnade) identifie chaque applet via son <strong>UUID</strong>.
+Si tu renommes simplement le dossier sans changer l’UUID, l’applet ne sera plus détectée.
+</p>
+<p>
+Pour un rebranding propre, il faut :
+</p>
+<ul>
+    <li>renommer le dossier</li>
+    <li>modifier l’UUID dans <strong>metadata.json</strong></li>
+    <li>mettre à jour les icônes et le nom</li>
+</ul>
+</div>
+
+<div class="box">
+<h2>2. Renommer le dossier de l’applet</h2>
+
+<p>Original :</p>
+<pre>/usr/share/cinnamon/applets/menu@cinnamon.org</pre>
+
+<p>Nouveau dossier pour MythicOS :</p>
+<pre>/usr/share/cinnade/applets/menu@cinnade.org</pre>
+
+<p>
+Tu peux copier l’ancien dossier puis le renommer :
+</p>
+
+<pre>
+sudo mkdir -p /usr/share/cinnade/applets/
+sudo cp -r /usr/share/cinnamon/applets/menu@cinnamon.org \
+           /usr/share/cinnade/applets/menu@cinnade.org
+</pre>
+</div>
+
+<div class="box">
+<h2>3. Modifier l’UUID dans metadata.json</h2>
+
+<p>Ouvre le fichier :</p>
+<pre>/usr/share/cinnade/applets/menu@cinnade.org/metadata.json</pre>
+
+<p>Change :</p>
+
+<pre>
+"uuid": "menu@cinnamon.org"
+</pre>
+
+<p>En :</p>
+
+<pre>
+"uuid": "menu@cinnade.org",
+"name": "Menu MythicOS",
+"description": "Menu principal rebrandé pour MythicOS Lucid",
+"icon": "mythicos-menu"
+</pre>
+
+<p>
+⚠️ L’UUID doit correspondre exactement au nom du dossier.
+</p>
+</div>
+
+<div class="box">
+<h2>4. Mettre ton icône MythicOS</h2>
+
+<p>Place ton icône dans :</p>
+<pre>/usr/share/cinnade/applets/menu@cinnade.org/icon.png</pre>
+
+<p>Ou utilise un SVG :</p>
+<pre>/usr/share/cinnade/applets/menu@cinnade.org/icon.svg</pre>
+
+<p>
+Tu peux aussi utiliser une icône système :
+</p>
+
+<pre>"icon": "mythicos-menu"</pre>
+</div>
+
+<div class="box">
+<h2>5. Rebranding visuel (CSS)</h2>
+
+<p>Tu peux modifier :</p>
+<pre>/usr/share/cinnade/applets/menu@cinnade.org/stylesheet.css</pre>
+
+<p>Pour appliquer ton thème Lucid :</p>
+
+<pre>
+.menu {
+    border-radius: 10px;
+    background: #ffffff;
+}
+body.dark .menu {
+    background: #2a2c2a;
+}
+</pre>
+</div>
+
+<div class="box">
+<h2>6. Recharger Cinnade</h2>
+
+<p>Redémarrer la session :</p>
+<pre>Alt + F2 → r → Entrée</pre>
+
+<p>Ou redémarrer l’ordinateur.</p>
+</div>
+
+<div class="box">
+<h2>7. Résultat</h2>
+
+<p>
+Tu as maintenant un applet de menu :
+</p>
+
+<ul>
+    <li>officiel pour MythicOS</li>
+    <li>isolé du menu Cinnamon</li>
+    <li>avec ton UUID <strong>menu@cinnade.org</strong></li>
+    <li>avec ton branding Lucid</li>
+</ul>
+</div>
+
+<script>
+    const toggleBtn = document.getElementById("theme-toggle");
+    const body = document.body;
+
+    if (localStorage.getItem("theme") === "dark") {
+        body.classList.add("dark");
+        toggleBtn.textContent = "☀️";
+    }
+
+    toggleBtn.addEventListener("click", () => {
+        body.classList.toggle("dark");
+
+        if (body.classList.contains("dark")) {
+            localStorage.setItem("theme", "dark");
+            toggleBtn.textContent = "☀️";
+        } else {
+            localStorage.setItem("theme", "light");
+            toggleBtn.textContent = "🌙";
+        }
+    });
+</script>
+
+</body>
+</html>
